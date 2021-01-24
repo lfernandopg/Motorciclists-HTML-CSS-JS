@@ -1,0 +1,208 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    min-height: 100%;
+}
+
+body {
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+}
+
+.table-container {
+    max-width: 100rem;
+    width: 70%;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 0;
+    overflow: auto;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+    box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+}
+
+.table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-style: hidden;
+    width: 100%;
+    max-width: 100%;
+    display: table;
+}
+
+.table th,  .table td{
+    padding: 2rem;
+    text-align: center;
+    vertical-align: top;
+    background-color: inherit;
+}
+
+.table tr {
+    border-bottom: 5px solid #d7dfe9;
+    background-color: #fff;
+    font-size: 1.6rem;
+}
+
+
+.table td{
+    font-weight: normal;
+}
+
+.table tbody tr:hover:not(.taken) {
+    cursor: pointer;
+}
+
+.table tbody tr:hover:not(.taken):not(.requested) {
+    background-color: #dcdcdc;
+}
+
+.table th{
+    font-weight: bold;
+}
+
+tr.taken, tr.taken:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+tr.taken td {
+    position: relative;
+}
+
+.taken td::before {
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+tr.requested {
+    background-color: #28a745;
+    color: white;
+}
+
+tr.requested:hover {
+    background-color: #1d7d33;
+}
+
+.user {
+    background-color: white;
+    color: black;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    border-radius: 5rem;
+    box-shadow: -11px 11px 15px -9px rgba(0,0,0,0.63);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+.name {
+    font-size: 1.6rem;
+    margin: 0 1rem 0 0;
+}
+
+.user img {
+    max-width: 100%;
+    width: 4rem;
+    margin: 0 1rem 0 0;
+}
+
+.up-down {
+    font-size: 1.6rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.list {
+    position: fixed;
+    background-color: white;
+    box-shadow: 0px 11px 15px -9px rgba(0,0,0,0.63);
+    bottom: 9rem;
+    right: 3rem;
+    border-radius: 2.5rem;
+}
+
+.list li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.5rem 0rem;
+    align-items: center;
+    width: auto;
+}
+
+.list ul {
+    margin: 0;
+    padding: 0.75rem 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    width: 85%;
+    color: #555;
+}
+
+.list ul:last-child {
+    border-bottom: none;
+}
+
+.list ul span {
+    font-size: 1.6rem;
+    padding: 0 1.5rem;
+}
+
+.list ul:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+
+    .table-container {
+        width: 90%;
+        margin: 2rem auto;
+    }
+
+    .table tr {
+        font-size: 1.4rem;
+    }
+
+    .user .name {
+        font-size: 1.4rem;
+    }
+
+    .list ul span {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .table-container {
+        width: 95%;
+        margin: 1.5rem auto;
+    }
+
+    .table tr {
+        font-size: 1.25rem;
+    }
+
+    .user .name {
+        font-size: 1.25rem;
+    }
+
+    .list ul span {
+        font-size: 1.25rem;
+    }
+}
